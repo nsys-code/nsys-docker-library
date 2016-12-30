@@ -11,3 +11,22 @@ The Nsys Docker Library provides set of images and maintenance scripts for devel
 
 [1]: https://nsys.org
 [2]: https://code.nsys.org
+
+# How to build Docker Images
+
+## nsys/ubuntu
+
+* Includes updates
+* [Source code](https://github.com/nsys-code/nsys-docker-library)
+
+### Build the Image
+
+~~~~
+$ cd baseimages/ubuntu && docker build -t nsys/ubuntu .
+~~~~
+
+### Run the Image
+
+~~~~
+$ docker run -it --rm nsys/ubuntu /bin/bash
+~~~~
