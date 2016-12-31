@@ -30,3 +30,20 @@ $ cd baseimages/ubuntu && docker build -t nsys/ubuntu .
 ~~~~
 $ docker run -it --rm nsys/ubuntu /bin/bash
 ~~~~
+
+## nsys/debian
+
+* Includes updates
+* [Dockerfile and source code](https://github.com/nsys-code/nsys-docker-library)
+
+### Build the Image
+
+~~~~
+$ cd baseimages/debian && docker build -t nsys/debian .
+~~~~
+
+### Run the Image
+
+~~~~
+$ docker run -it --rm nsys/debian /bin/bash
+~~~~
