@@ -4,46 +4,28 @@
 
 * [Nsys Platform][1]
 * [Nsys Code][2]
+* [Nsys Installation and Configuration][3]
 
 ## Description
 
 The Nsys Docker Library provides set of images and maintenance scripts for development, deployment and testing of the [Nsys Platform](https://nsys.org). See [the Docker Hub page](https://hub.docker.com/r/nsys) for the full list of available Docker images for the Nsys Platform and for information regarding contributing and issues.
 
 [1]: https://nsys.org
-[2]: https://code.nsys.org
+[2]: http://code.nsys.org
+[3]: http://doc.nsys.org/display/NSYS/Nsys+Installation+and+Configuration
 
-# How to build images
-
-## nsys/ubuntu
-
-* Includes updates
-* [Dockerfile and source code](https://github.com/nsys-code/nsys-docker-library)
-
-### Build the Image
+## Nsys Platform (Nsys Portal)
 
 ~~~~
-$ cd baseimages/ubuntu && docker build -t nsys/ubuntu .
+$ docker run -it --rm -p 9060:9060 nsys/nsys
 ~~~~
 
-### Run the Image
+> For more details about Docker image [nsys/nsys](https://hub.docker.com/r/nsys/nsys) see [this page](nsys/README.md).
+
+## Nsys Platform (Nsys Node)
 
 ~~~~
-$ docker run -it --rm nsys/ubuntu /bin/bash
+$ docker run -it --rm -p 9080:9080 nsys/nsys-node
 ~~~~
 
-## nsys/debian
-
-* Includes updates
-* [Dockerfile and source code](https://github.com/nsys-code/nsys-docker-library)
-
-### Build the Image
-
-~~~~
-$ cd baseimages/debian && docker build -t nsys/debian .
-~~~~
-
-### Run the Image
-
-~~~~
-$ docker run -it --rm nsys/debian /bin/bash
-~~~~
+> For more details about Docker image [nsys/nsys-node](https://hub.docker.com/r/nsys/nsys-node) see [this page](nsys-node/README.md).
