@@ -51,8 +51,8 @@ dockerBuildImage() {
         fi
     fi
 
-    #$DOCKER_CMD build --no-cache -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} -t ${DOCKER_IMAGE_NAME}:latest $DOCKER_IMAGE_DIR
-    $DOCKER_CMD build -t $DOCKER_IMAGE_NAME $DOCKER_IMAGE_DIR
+    #$DOCKER_CMD build --pull --no-cache -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} -t ${DOCKER_IMAGE_NAME}:latest $DOCKER_IMAGE_DIR
+    $DOCKER_CMD build --pull -t $DOCKER_IMAGE_NAME $DOCKER_IMAGE_DIR
 }
 
 dockerRunImage() {
