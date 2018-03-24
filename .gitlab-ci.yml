@@ -5,7 +5,7 @@ stages:
   - build-platform
 
 before_script:
-  - docker login -u "$DOCKER_REGISTRY_USER" -p "$DOCKER_REGISTRY_PWD" $DOCKER_REGISTRY
+  - docker login -u "$DOCKER_REGISTRY_USER" -p "$DOCKER_REGISTRY_PWD"
 
 build-nsys-debian:
   stage: build-baseimage
