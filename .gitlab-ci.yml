@@ -14,7 +14,7 @@ build-nsys-debian:
     - echo $DOCKER_IMAGE
     - cd baseimages/debian
     - docker build --pull -t debian .
-    - docker tag debian "$DOCKER_IMAGE:latest"
+    - docker tag debian:latest "$DOCKER_IMAGE"
     - docker push "$DOCKER_IMAGE"
 
 build-nsys-ubuntu:
@@ -24,7 +24,7 @@ build-nsys-ubuntu:
     - echo $DOCKER_IMAGE
     - cd baseimages/ubuntu
     - docker build --pull -t ubuntu .
-    - docker tag ubuntu "$DOCKER_IMAGE:latest"
+    - docker tag ubuntu:latest "$DOCKER_IMAGE"
     - docker push "$DOCKER_IMAGE"
 
 build-nsys:
@@ -34,7 +34,7 @@ build-nsys:
     - echo $DOCKER_IMAGE
     - cd nsys
     - docker build --pull --no-cache -t nsys .
-    - docker tag nsys "$DOCKER_IMAGE:latest"
+    - docker tag nsys:latest "$DOCKER_IMAGE"
     - docker push "$DOCKER_IMAGE"
 
 build-nsys-node:
@@ -44,5 +44,5 @@ build-nsys-node:
     - echo $DOCKER_IMAGE
     - cd nsys-node
     - docker build --pull --no-cache -t nsys-node .
-    - docker tag nsys-node "$DOCKER_IMAGE:latest"
+    - docker tag nsys-node:latest "$DOCKER_IMAGE"
     - docker push "$DOCKER_IMAGE"
