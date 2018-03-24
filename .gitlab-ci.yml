@@ -10,39 +10,27 @@ before_script:
 build-nsys-debian:
   stage: build-baseimage
   script:
-    - export DOCKER_IMAGE=nsys/debian
-    - echo $DOCKER_IMAGE
     - cd baseimages/debian
-    - docker build --pull -t debian .
-    - docker tag debian:latest "$DOCKER_IMAGE"
-    - docker push "$DOCKER_IMAGE"
+    - docker build --pull -t nsys/debian .
+    - docker push nsys/debian
 
 build-nsys-ubuntu:
   stage: build-baseimage
   script:
-    - export DOCKER_IMAGE=nsys/ubuntu
-    - echo $DOCKER_IMAGE
     - cd baseimages/ubuntu
-    - docker build --pull -t ubuntu .
-    - docker tag ubuntu:latest "$DOCKER_IMAGE"
-    - docker push "$DOCKER_IMAGE"
+    - docker build --pull -t nsys/ubuntu .
+    - docker push nsys/ubuntu
 
 build-nsys:
   stage: build-platform
   script:
-    - export DOCKER_IMAGE=nsys/nsys
-    - echo $DOCKER_IMAGE
     - cd nsys
-    - docker build --pull --no-cache -t nsys .
-    - docker tag nsys:latest "$DOCKER_IMAGE"
-    - docker push "$DOCKER_IMAGE"
+    - docker build --pull --no-cache -t nsys/nsys .
+    - docker push nsys/nsys
 
 build-nsys-node:
   stage: build-platform
   script:
-    - export DOCKER_IMAGE=nsys/nsys-node
-    - echo $DOCKER_IMAGE
     - cd nsys-node
-    - docker build --pull --no-cache -t nsys-node .
-    - docker tag nsys-node:latest "$DOCKER_IMAGE"
-    - docker push "$DOCKER_IMAGE"
+    - docker build --pull --no-cache -t nsys/nsys-node .
+    - docker push nsys/nsys-node
