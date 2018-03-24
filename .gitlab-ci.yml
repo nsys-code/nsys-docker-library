@@ -10,7 +10,7 @@ before_script:
 build-nsys-debian:
   stage: build-baseimage
   script:
-    - export DOCKER_IMAGE=$DOCKER_REGISTRY/nsys/debian
+    - export DOCKER_IMAGE=nsys/debian
     - echo $DOCKER_IMAGE
     - cd baseimages/debian
     - docker build --pull -t debian .
@@ -20,7 +20,7 @@ build-nsys-debian:
 build-nsys-ubuntu:
   stage: build-baseimage
   script:
-    - export DOCKER_IMAGE=$DOCKER_REGISTRY/nsys/ubuntu
+    - export DOCKER_IMAGE=nsys/ubuntu
     - echo $DOCKER_IMAGE
     - cd baseimages/ubuntu
     - docker build --pull -t ubuntu .
@@ -30,7 +30,7 @@ build-nsys-ubuntu:
 build-nsys:
   stage: build-platform
   script:
-    - export DOCKER_IMAGE=$DOCKER_REGISTRY/nsys/nsys
+    - export DOCKER_IMAGE=nsys/nsys
     - echo $DOCKER_IMAGE
     - cd nsys
     - docker build --pull --no-cache -t nsys .
@@ -40,7 +40,7 @@ build-nsys:
 build-nsys-node:
   stage: build-platform
   script:
-    - export DOCKER_IMAGE=$DOCKER_REGISTRY/nsys/nsys-node
+    - export DOCKER_IMAGE=nsys/nsys-node
     - echo $DOCKER_IMAGE
     - cd nsys-node
     - docker build --pull --no-cache -t nsys-node .
