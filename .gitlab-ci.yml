@@ -11,14 +11,16 @@ build-nsys-debian:
   stage: build-baseimage
   script:
     - cd baseimages/debian
-    - docker build --pull --no-cache -t "$DOCKER_REGISTRY/nsys/debian" .
+    - docker build --pull -t "$DOCKER_REGISTRY/nsys/debian" .
+    - docker tag debian "$DOCKER_REGISTRY/nsys/debian:latest"
     - docker push "$DOCKER_REGISTRY/nsys/debian"
 
 build-nsys-ubuntu:
   stage: build-baseimage
   script:
     - cd baseimages/ubuntu
-    - docker build --pull --no-cache -t "$DOCKER_REGISTRY/nsys/ubuntu" .
+    - docker build --pull -t "$DOCKER_REGISTRY/nsys/ubuntu" .
+    - docker tag ubuntu "$DOCKER_REGISTRY/nsys/ubuntu:latest"
     - docker push "$DOCKER_REGISTRY/nsys/ubuntu"
 
 build-nsys:
@@ -26,6 +28,7 @@ build-nsys:
   script:
     - cd nsys
     - docker build --pull --no-cache -t "$DOCKER_REGISTRY/nsys/nsys" .
+    - docker tag nsys "$DOCKER_REGISTRY/nsys/nsys:latest"
     - docker push "$DOCKER_REGISTRY/nsys/nsys"
 
 build-nsys-node:
@@ -33,4 +36,5 @@ build-nsys-node:
   script:
     - cd nsys-node
     - docker build --pull --no-cache -t "$DOCKER_REGISTRY/nsys/nsys-node" .
+    - docker tag nsys-node "$DOCKER_REGISTRY/nsys/nsys-node:latest"
     - docker push "$DOCKER_REGISTRY/nsys/nsys-node"
