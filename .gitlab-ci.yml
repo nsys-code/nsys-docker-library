@@ -1,0 +1,40 @@
+image: docker:latest
+
+stages:
+  - build-image
+  - publish-image
+
+before_script:
+  - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PWD $DOCKER_REGISTRY
+
+build-nsys-debian:
+  stage: build-image
+  script:
+    - cd baseimages/debian
+    - docker build --pull --no-cache -t $DOCKER_REGISTRY/nsys/debian .
+
+build-nsys-ubuntu:
+  stage: build-image
+  script:
+    - cd baseimages/ubuntu
+    - docker build --pull --no-cache -t $DOCKER_REGISTRY/nsys/ubuntu .
+
+build-nsys:
+  stage: build-image
+  script:
+    - cd nsys
+    - docker build --pull --no-cache -t $DOCKER_REGISTRY/nsys/nsys .
+
+build-nsys-node:
+  stage: build-image
+  script:
+    - cd nsys-node
+    - docker build --pull --no-cache -t $DOCKER_REGISTRY/nsys/nsys-node .
+
+publish-image:
+  stage: publish-image
+  script:
+    - docker push $DOCKER_REGISTRY/nsys/debian
+    - docker push $DOCKER_REGISTRY/nsys/ubuntu
+    - docker push $DOCKER_REGISTRY/nsys/nsys
+    - docker push $DOCKER_REGISTRY/nsys/nsys-node
