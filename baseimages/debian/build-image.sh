@@ -3,7 +3,7 @@
 ##########################################################################
 #                                                                        #
 # Nsys Docker Library                                                    #
-# Copyright 2015, 2017 Nsys.org - Tomas Hrdlicka <tomas@hrdlicka.co.uk>  #
+# Copyright 2015, 2018 Nsys.org - Tomas Hrdlicka <tomas@hrdlicka.co.uk>  #
 # All rights reserved.                                                   #
 #                                                                        #
 # Web: code.nsys.org                                                     #
