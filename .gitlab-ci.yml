@@ -45,4 +45,5 @@ build-nsys-cloud:
   before_script:
     - apt-get update -y && apt-get install curl -y
   script:
-    - curl -X POST -F token=$TRIGGER_TOKEN -F ref=develop $GITLAB_HOST/api/v4/projects/11/trigger/pipeline
+    - curl -X POST -F token=$TRIGGER_TOKEN_NSYS_CLOUD -F ref=develop $GITLAB_HOST/api/v4/projects/11/trigger/pipeline
+    - curl -X POST -F token=$TRIGGER_TOKEN_NSYS_CLOUD_NODE -F ref=develop $GITLAB_HOST/api/v4/projects/12/trigger/pipeline
