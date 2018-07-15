@@ -40,7 +40,7 @@ build-nsys-node:
     - docker push nsys/nsys-node
 
 build-nsys-cloud:
-  image: ubuntu:16.04
+  image: ubuntu:18.04
   stage: dependency-build
   before_script:
     - apt-get update -y && apt-get install curl -y
