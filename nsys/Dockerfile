@@ -25,4 +25,6 @@ RUN ./nsys-setup.sh
 EXPOSE 9060
 EXPOSE 9080
 
+VOLUME ["/var/nsys/application-data"]
+
 CMD ["sh", "nsys-launcher.sh"]
