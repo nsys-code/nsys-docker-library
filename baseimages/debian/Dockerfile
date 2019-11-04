@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
 
 RUN apt-get update && \
