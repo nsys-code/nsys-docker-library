@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
 
 RUN apt-get update && \
