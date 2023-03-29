@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
 
 RUN apt-get update && \
