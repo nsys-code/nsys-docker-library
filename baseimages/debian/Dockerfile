@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
 
 RUN apt-get update && \
