@@ -1,7 +1,7 @@
 FROM nsys/ubuntu:latest
 LABEL org.opencontainers.image.authors="Tomas Hrdlicka <tomas@hrdlicka.co.uk>"
 
-ENV NSYS_DOCKER_DIR /opt/nsys-docker
+ENV NSYS_DOCKER_DIR=/opt/nsys-docker
 
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
@@ -12,8 +12,8 @@ RUN apt-get update && \
     echo "\n\nJAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment && \
     mkdir -p $NSYS_DOCKER_DIR
 
-ENV TERM xterm
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV TERM=xterm
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 WORKDIR $NSYS_DOCKER_DIR
 
