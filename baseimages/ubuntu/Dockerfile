@@ -1,5 +1,5 @@
-FROM ubuntu:22.04
-MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
+FROM ubuntu:24.04
+LABEL org.opencontainers.image.authors="Tomas Hrdlicka <tomas@hrdlicka.co.uk>"
 
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
