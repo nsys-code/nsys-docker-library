@@ -1,5 +1,5 @@
 FROM debian:bookworm
-MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
+LABEL org.opencontainers.image.authors="Tomas Hrdlicka <tomas@hrdlicka.co.uk>"
 
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
