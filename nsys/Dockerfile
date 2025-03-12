@@ -1,5 +1,5 @@
 FROM nsys/ubuntu:latest
-MAINTAINER Tomas Hrdlicka <tomas@hrdlicka.co.uk>
+LABEL org.opencontainers.image.authors="Tomas Hrdlicka <tomas@hrdlicka.co.uk>"
 
 ENV NSYS_DOCKER_DIR /opt/nsys-docker
 
